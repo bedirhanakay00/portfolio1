@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bundle Works | Yaratıcı Projeler</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #000000 100%);
+            --card-bg: rgba(30, 41, 59, 0.6);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1280px; margin: 0 auto; padding: 40px 20px; }
+
+        /* Header */
+        .header { text-align: center; padding: 60px 20px; margin-bottom: 20px; }
+        .header h1 {
+            font-size: 3.5rem; font-weight: 800;
+            background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        .header p { font-size: 1.2rem; color: var(--text-muted); }
+
+        /* Bölüm Başlıkları */
+        .section-title {
+            font-size: 1.8rem; margin: 50px 0 30px 0;
+            border-left: 5px solid #6366f1; padding-left: 15px; color: #fff;
+        }
+
+        /* --- ÜST KISIM: KARTLAR (GRID) --- */
+        .projects-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;
+        }
+
+        .project-card {
+            background: var(--card-bg); backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border); border-radius: 20px; padding: 25px;
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover { transform: translateY(-5px); border-color: rgba(99, 102, 241, 0.4); }
+
+        .project-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; color: #fff; }
+        .project-description { color: var(--text-muted); margin-bottom: 15px; font-size: 0.9rem; min-height: 40px; }
+
+        /* Standart Kart Iframe'i */
+        .card-iframe {
+            width: 100%; height: 300px; border: none; border-radius: 12px;
+            background: #1e1e1e; margin-bottom: 15px;
+        }
+
+        .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+        .tech-badge {
+            background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 12px;
+            font-size: 0.75rem; border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .project-link {
+            display: block; text-align: center; background: var(--primary-gradient);
+            color: white; padding: 12px; border-radius: 10px; text-decoration: none; font-weight: 600;
+            transition: 0.3s;
+        }
+        .project-link:hover { opacity: 0.9; transform: scale(1.02); }
+
+        /* --- ALT KISIM: LISTE (RICH MEDIA) --- */
+        .embed-section { margin-top: 60px; }
+
+        .embedded-project {
+            background: #111; border: 1px solid var(--card-border);
+            border-radius: 20px; overflow: hidden; margin-bottom: 40px;
+        }
+
+        .embedded-header {
+            padding: 15px 25px; background: rgba(255,255,255,0.03);
+            border-bottom: 1px solid var(--card-border);
+        }
+        .embedded-header h3 { font-size: 1.2rem; color: #e2e8f0; }
+
+        /* Özel Yükseklikli Iframe Ayarı */
+        .custom-iframe {
+            width: 100%; display: block; border: none; background: #000;
+        }
+
+        .footer { text-align: center; margin-top: 80px; color: var(--text-muted); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.5rem; }
+            .card-iframe { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>Bundle Works</h1>
+            <p>Markalar ve kampanyalar için interaktif çözümler</p>
+        </header>
+
+        <h2 class="section-title">✨ Öne Çıkanlar</h2>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-title">🎬 HBO Max - Moviedle</div>
+                <div class="project-description">
+                    HBO Max için film tahmin oyunu. Kullanıcı etkileşimini artıran gamification kurgusu.
+                </div>
+                <iframe class="card-iframe" src="hbomax.png" title="HBO Max"></iframe>
+                <div class="tags">
+                    <span class="tech-badge">Interactive Game</span>
+                    <span class="tech-badge">HBO Max</span>
+                </div>
+                <a href="https://static.bundle.app/ads/046a0d4e-d163-4906-92a3-2b58434a7f51/index.html" target="_blank" class="project-link">Projeye Git →</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">📱 Vodafone HR | AI</div>
+                <div class="project-description">
+                    Yapay zeka destekli interaktif mülakat deneyimi simülasyonu.
+                </div>
+                <iframe class="card-iframe" src="https://static.bundle.app/ad-assets/vodafone-discover/b5108a6e-d1ea-4d1c-b1ee-d35bac2ff20e.html"></iframe>
+                <div class="tags">
+                    <span class="tech-badge">AI Integration</span>
+                    <span class="tech-badge">Vodafone</span>
+                </div>
+                <a href="https://static.bundle.app/ad-assets/vodafone-discover/b5108a6e-d1ea-4d1c-b1ee-d35bac2ff20e.html" target="_blank" class="project-link">Projeye Git →</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">⚽ Bundle Arena</div>
+                <div class="project-description">
+                    Canlı skorlar ve anlık güncellemeler içeren özel futbol bülteni.
+                </div>
+                <iframe class="card-iframe" src="https://static.bundle.app/bundle-arena/htmls/28-08-2025.html"></iframe>
+                <div class="tags">
+                    <span class="tech-badge">Sports Data</span>
+                    <span class="tech-badge">Bundle Arena</span>
+                </div>
+                <a href="https://static.bundle.app/bundle-arena/htmls/28-08-2025.html" target="_blank" class="project-link">Projeye Git →</a>
+            </div>
+        </div>
+
+        <div class="embed-section">
+            <h2 class="section-title">🚀 Rich Media Kampanyalar</h2>
+            <p style="color:var(--text-muted); margin-bottom:30px;">Aşağıdaki projeler özel boyutlarda tasarlanmıştır.</p>
+
+            <div class="embedded-project">
+                <div class="embedded-header"><h3>🚗 BYD Rich Media</h3></div>
+                <iframe class="custom-iframe" src="byd-mastheadd.html" style="height: 619px;"></iframe>
+            </div>
+
+            <div class="embedded-project">
+                <div class="embedded-header"><h3>✈️ Akbank Wings Yılbaşı</h3></div>
+                <iframe class="custom-iframe" src="akbankwingsyılbaşı.html" style="height: 1138px;"></iframe>
+            </div>
+
+            <div class="embedded-project">
+                <div class="embedded-header"><h3>🎁 Penti Yılbaşı</h3></div>
+                <iframe class="custom-iframe" src="penti-yılbası.html" style="height: 1138px;"></iframe>
+            </div>
+
+            <div class="embedded-project">
+                <div class="embedded-header"><h3>🍫 Fellas</h3></div>
+                <iframe class="custom-iframe" src="fellas.html" style="height: 2270px;"></iframe>
+            </div>
+
+            <div class="embedded-project">
+                <div class="embedded-header"><h3>⛽ Opet | Playable Ad</h3></div>
+                <iframe class="custom-iframe" src="opetultrarace.html" style="height: 1138px;"></iframe>
+            </div>
+        </div>
+
+        <div class="footer">
+            Made with ❤️ for Bundle
+        </div>
+    </div>
+
+</body>
+</html>
